@@ -5,8 +5,8 @@ namespace GreenTomato.Library.Models
 {
   public class MovieMX : IMovie
   {
-    public string Title { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public Genre Genre { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public List<Actor> Actors { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public string Title { get; set; }
+    public Genre Genre { get; set; }
+    public List<Actor> Actors { get; set; }
   }
 }
