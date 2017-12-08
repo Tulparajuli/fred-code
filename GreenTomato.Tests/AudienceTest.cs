@@ -1,4 +1,5 @@
 using System;
+using GreenTomato.Library.FactoryPattern;
 using GreenTomato.Library.Interfaces;
 using GreenTomato.Library.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -54,11 +55,21 @@ namespace GreenTomato.Tests
     // }
 
     [TestMethod]
-    public void AudiencePlayer()
+    public void FactoryPatternTV()
     {
-      var mp = new MoviePlayer(new MovieCA());
+      var tvFactory = new TVPlayer2();
+      var tvParts = tvFactory.Create();
 
-      Assert.AreEqual("hello", mp.S);
+      Assert.AreEqual(4, tvParts.Count);
+    }
+
+    [TestMethod]
+    public void FactoryPatternRadio()
+    {
+      var radioFactory = new RadioPlayer2();
+      var radioParts = radioFactory.Create();
+
+      Assert.AreEqual(7, radioParts.Count);
     }
   }
 }

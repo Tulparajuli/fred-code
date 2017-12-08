@@ -10,7 +10,6 @@ namespace GreenTomato.Library.Models
     public MoviePlayer(IMovie movie)
     {
       m = movie;
-      S = new TVPlayer().Screen;
     }
 
     public string Forward()
