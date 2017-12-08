@@ -16,14 +16,14 @@ namespace GreenTomato.Tests
       Audience = new Audience(new MovieUS());
     }
 
-    [TestMethod]
-    public void AudienceShouldWatch()
-    {
-      var expected = "play " + typeof(MovieUS).ToString();
-      var actual = Audience.Watch();
+    // [TestMethod]
+    // public void AudienceShouldWatch()
+    // {
+    //   var expected = "play " + typeof(MovieUS).ToString();
+    //   var actual = Audience.Watch();
 
-      Assert.IsTrue(expected == actual);
-    }
+    //   Assert.IsTrue(expected == actual);
+    // }
 
     [TestMethod]
     public void AudienceShouldDo()
@@ -47,6 +47,7 @@ namespace GreenTomato.Tests
       var au = new Audience(new MovieMX());
 
       au.GoPlaying(mp);
+      au.Saving(mp);
       mp.PlayMovie();
 
       Assert.AreEqual(expected, au.response);
