@@ -25,32 +25,40 @@ namespace GreenTomato.Tests
     //   Assert.IsTrue(expected == actual);
     // }
 
+    // [TestMethod]
+    // public void AudienceShouldDo()
+    // {
+    //   var m = new MovieUS();
+    //   var mp = new MoviePlayer(m);
+    //   AudienceStuff play = () => { return new MoviePlayer(new MovieCA()).Play(); };
+    //   Action<int> compute = (i) => { System.Console.WriteLine(i); };
+    //   var expected = "play " + typeof(MovieCA).ToString();
+    //   var actual = Audience.DoAction(play);
+    //   Audience.Pause1 x = (i, b) => { return string.Empty; }; 
+
+    //   Assert.IsTrue(expected == actual);
+    // }
+
+    // [TestMethod]
+    // public void AudienceWatching()
+    // {
+    //   var expected = "we are watching";
+    //   var mp = new MoviePlayer(new MovieMX());
+    //   var au = new Audience(new MovieMX());
+
+    //   au.GoPlaying(mp);
+    //   au.Saving(mp);
+    //   mp.PlayMovie();
+
+    //   Assert.AreEqual(expected, au.response);
+    // }
+
     [TestMethod]
-    public void AudienceShouldDo()
+    public void AudiencePlayer()
     {
-      var m = new MovieUS();
-      var mp = new MoviePlayer(m);
-      AudienceStuff play = () => { return new MoviePlayer(new MovieCA()).Play(); };
-      Action<int> compute = (i) => { System.Console.WriteLine(i); };
-      var expected = "play " + typeof(MovieCA).ToString();
-      var actual = Audience.DoAction(play);
-      Audience.Pause1 x = (i, b) => { return string.Empty; }; 
+      var mp = new MoviePlayer(new MovieCA());
 
-      Assert.IsTrue(expected == actual);
-    }
-
-    [TestMethod]
-    public void AudienceWatching()
-    {
-      var expected = "we are watching";
-      var mp = new MoviePlayer(new MovieMX());
-      var au = new Audience(new MovieMX());
-
-      au.GoPlaying(mp);
-      au.Saving(mp);
-      mp.PlayMovie();
-
-      Assert.AreEqual(expected, au.response);
+      Assert.AreEqual("hello", mp.S);
     }
   }
 }

@@ -5,10 +5,12 @@ namespace GreenTomato.Library.Models
   public class MoviePlayer : IPlayer
   {
     private IMovie m;
+    public string S;
 
     public MoviePlayer(IMovie movie)
     {
       m = movie;
+      S = new TVPlayer().Screen;
     }
 
     public string Forward()
@@ -23,6 +25,7 @@ namespace GreenTomato.Library.Models
 
     public string Play()
     {
+      //TVPlayer.Play();
       return string.Format("{0} {1}", "play", m.ToString());
     }
 
