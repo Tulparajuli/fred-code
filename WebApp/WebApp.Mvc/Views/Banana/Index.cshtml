@@ -1,0 +1,46 @@
+﻿@*@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+    
+    </div>
+</body>
+</html>*@
+
+@model WebApp.Mvc.Models.Person
+@using WebApp.Mvc.Models
+
+@{ 
+//if (DateTime.Now.Hour < 12)
+//{
+//  Layout = "morning";
+//}
+//else
+//{
+//  Layout = "evening";
+//}
+}
+
+<span>Hello ASP.NET!</span>
+<h2>hello @Model.Name</h2>
+@*@Model.People.FirstOrDefault()*@
+
+@ViewBag.Data
+@ViewData["Data"]
+@TempData["Data"]
+@Session["Data"]
+
+@{ 
+  var p = new Person();
+  
+  <h3>  </h3>
+}
