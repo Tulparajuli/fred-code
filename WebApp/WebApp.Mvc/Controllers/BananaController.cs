@@ -11,18 +11,43 @@ namespace WebApp.Mvc.Controllers
   public class BananaController : Controller
   {
     // GET: Banana
-    //public ActionResult Index()
-    //{
-    //  var p = new Person() { Name = "fred" };
-    //  ViewBag.Data = "nada";
-    //  ViewData["Data"] = "niet";
+    [HttpGet]
+    public ActionResult Index()
+    {
+      var p = new Person() { GivenName = "fred" };
+      ViewBag.Data = "nada";
+      ViewData["Data"] = "niet";
 
-    //  TempData["Data"] = "fred";
-    //  Session["Data"] = "belotte";
+      TempData["Data"] = "fred";
+      Session["Data"] = "belotte";
 
-    //  return RedirectToAction("Default");
-    //  //return View(p);
-    //}
+      //return RedirectToAction("Default");
+      return View(p);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult Index([Bind(Include ="FirstName,MiddleName,GivenName", Exclude = "LastName,FamilyName")]Contact p)
+    {
+      if (ModelState.IsValid)
+      {
+        return RedirectToAction("Success");
+      }
+
+      return RedirectToAction("Failure");
+    }
+
+    [HttpGet]
+    public ActionResult Success()
+    {
+      return View();
+    }
+
+    [HttpGet]
+    public ActionResult Failure()
+    {
+      return View();
+    }
 
     //[HttpPost]
     //[HttpGet]

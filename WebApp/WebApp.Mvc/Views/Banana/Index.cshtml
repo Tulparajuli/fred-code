@@ -1,25 +1,25 @@
 ﻿@*@{
-    Layout = null;
-}
+      Layout = null;
+  }
 
-<!DOCTYPE html>
+  <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>*@
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width" />
+      <title></title>
+  </head>
+  <body>
+      <div>
+
+      </div>
+  </body>
+  </html>*@
 
 @model WebApp.Mvc.Models.Person
 @using WebApp.Mvc.Models
 
-@{ 
+@{
 //if (DateTime.Now.Hour < 12)
 //{
 //  Layout = "morning";
@@ -30,17 +30,32 @@
 //}
 }
 
-<span>Hello ASP.NET!</span>
-<h2>hello @Model.Name</h2>
-@*@Model.People.FirstOrDefault()*@
+@*<span>Hello ASP.NET!</span>
+  <h2>hello @Model.Name</h2>
+  @Model.People.FirstOrDefault()
 
-@ViewBag.Data
-@ViewData["Data"]
-@TempData["Data"]
-@Session["Data"]
+  @ViewBag.Data
+  @ViewData["Data"]
+  @TempData["Data"]
+  @Session["Data"]
 
-@{ 
-  var p = new Person();
-  
-  <h3>  </h3>
+  @{
+    var p = new Person();
+
+    <h3>  </h3>
+  }*@
+
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+  @Html.ValidationMessageFor(m => m.GivenName)
+  @Html.LabelFor(m => m.GivenName)
+  @Html.TextBoxFor(m => m.GivenName)
+  @Html.ValidationMessageFor(m => m.FamilyName)
+  @Html.LabelFor(m => m.FamilyName)
+  @Html.TextBoxFor(m => m.FamilyName)
+
+  <button type="submit">SUBMIT</button>
 }
+
+

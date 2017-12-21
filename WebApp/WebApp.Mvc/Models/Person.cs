@@ -8,9 +8,10 @@ namespace WebApp.Mvc.Models
 {
   public class Person
   {
-    [Required]
+    [Required(ErrorMessage = "Connor said so...")]
     [StringLength(50)]
     [DataType(DataType.Text)]
+    [Display(Name = "First Name")]
     public string GivenName { get; set; }
 
     [StringLength(50)]
