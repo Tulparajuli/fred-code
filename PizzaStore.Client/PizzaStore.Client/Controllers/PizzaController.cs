@@ -4,18 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore;
+using PizzaStore.Client.Models;
 using PizzaStore.Client.ViewModels;
 
 namespace PizzaStore.Client.Controllers
 {
   public class PizzaController : Controller
   {
+    private static SuperModel _SM = new SuperModel();
+
     // GET: Pizza
     public ActionResult Index()
     {
-      var sm = new SuperModel();
-
-      return View(sm.Pizzas);
+      return View(_SM.GetPizzas());
     }
 
     // GET: Pizza/Details/5
@@ -27,18 +29,22 @@ namespace PizzaStore.Client.Controllers
     // GET: Pizza/Create
     public ActionResult Create()
     {
-      return View();
+      return View(new Pizza());
     }
 
     // POST: Pizza/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public ActionResult Create(IFormCollection collection)
+    public ActionResult Create(Pizza p)
     {
       try
       {
-        // TODO: Add insert logic here
+        if (!ModelState.IsValid)
+        {
+          throw new ArgumentException("this pizza eh no good!!!");
+        }
 
+        _SM.AddPizza(p);
         return RedirectToAction(nameof(Index));
       }
       catch
