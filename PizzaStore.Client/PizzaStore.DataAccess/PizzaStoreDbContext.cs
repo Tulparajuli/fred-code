@@ -11,7 +11,7 @@ namespace PizzaStore.DataAccess
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
       //base.OnConfiguring(optionsBuilder);
-      optionsBuilder.UseSqlServer("");
+      optionsBuilder.UseSqlServer("server=fredsqlweek.database.windows.net;database=fredsqlweek;user=sqladmin;password=Password123;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

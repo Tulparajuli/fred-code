@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4730e0ab-21b0-4b81-aa39-422b2677966e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54343/Pizza.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Pizza.xsd" MetadataType="Schema" ID="3bf7cca4-5906-4773-b135-402772a0e4ca" SourceId="1" SourceUrl="http://localhost:54343/Pizza.svc?xsd=xsd1" />
+    <MetadataFile FileName="Pizza1.xsd" MetadataType="Schema" ID="28d40efa-ccab-4f69-bba4-c65df2d2a98a" SourceId="1" SourceUrl="http://localhost:54343/Pizza.svc?xsd=xsd0" />
+    <MetadataFile FileName="Pizza.wsdl" MetadataType="Wsdl" ID="ab124aef-6cad-42eb-b475-50f2d0ff2bdc" SourceId="1" SourceUrl="http://localhost:54343/Pizza.svc?wsdl" />
+    <MetadataFile FileName="Pizza.disco" MetadataType="Disco" ID="c47fd42f-2f87-4830-a559-e3491696d0ab" SourceId="1" SourceUrl="http://localhost:54343/Pizza.svc?disco" />
+    <MetadataFile FileName="Pizza2.xsd" MetadataType="Schema" ID="7919af1b-671a-483b-8164-11b4d9ffa5c2" SourceId="1" SourceUrl="http://localhost:54343/Pizza.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

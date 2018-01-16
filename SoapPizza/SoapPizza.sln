@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapPizza.Service", "SoapPizza.Service\SoapPizza.Service.csproj", "{6B385516-A144-4445-9176-385FE62822BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapPizza.Library", "SoapPizza.Library\SoapPizza.Library.csproj", "{6ADD15DB-3CDF-45C2-851C-C2A1FAA1955B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B385516-A144-4445-9176-385FE62822BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B385516-A144-4445-9176-385FE62822BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B385516-A144-4445-9176-385FE62822BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B385516-A144-4445-9176-385FE62822BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ADD15DB-3CDF-45C2-851C-C2A1FAA1955B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADD15DB-3CDF-45C2-851C-C2A1FAA1955B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADD15DB-3CDF-45C2-851C-C2A1FAA1955B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADD15DB-3CDF-45C2-851C-C2A1FAA1955B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A5A912E-331E-47C3-9850-B9ABD76C752A}
+	EndGlobalSection
+EndGlobal
