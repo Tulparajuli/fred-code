@@ -71,17 +71,30 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = __webpack_require__(1);
-(function (a) {
-    var success = function (res) {
-        console.log('success');
-        console.log(res);
-    };
-    var failure = function (res) {
-        console.log('failure');
-        console.log(res);
-    };
-    a.ajax('get', 'https://swapi.co/api/people/1', null, success, failure);
-})(index_1.APP); // IIFE
+var finder = document.querySelector('#finder');
+var pass = function (res, el) {
+    if (res) {
+        var r = JSON.parse(res);
+        var ul = document.createElement('ul');
+        for (var i in r.results[0].films) {
+            var li = document.createElement('li');
+            li.innerHTML = i;
+            ul.appendChild(li);
+        }
+        el.appendChild(ul);
+    }
+};
+finder.addEventListener('click', function (event) {
+    var searchItem = document.querySelector('#character').value;
+    var ml = document.querySelector('#movielist');
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    index_1.APP.ajax('get', 'https://swapi.co/api/people?search=' + searchItem, null, function (rs) {
+        pass(rs, ml);
+    }, function (rs) {
+        console.log(rs);
+    });
+});
 
 
 /***/ }),
@@ -93,8 +106,18 @@ var index_1 = __webpack_require__(1);
 Object.defineProperty(exports, "__esModule", { value: true });
 var APP = (function () {
     var ajax = function (verb, url, data, pass, fail) {
-        // 
-        console.log('hello ajax');
+        var xhr = new XMLHttpRequest(); // provided by browser
+        xhr.open(verb, url);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                pass(xhr.response);
+            }
+            else if (xhr.readyState == 4) {
+                fail(xhr.response);
+            }
+        };
+        xhr.send();
+        //console.log('hello ajax');
     };
     return {
         ajax: ajax

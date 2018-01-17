@@ -1,12 +1,12 @@
 import { APP } from "./index";
 
 (function (a) {
-  var success = function (res) {
+  var success = function (res: any) {
     console.log('success');
     console.log(res);
   }
 
-  var failure = function (res) {
+  var failure = function (res: any) {
     console.log('failure');
     console.log(res);
   }
