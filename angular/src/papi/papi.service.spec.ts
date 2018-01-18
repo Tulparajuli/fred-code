@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { PapiService } from './papi.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PapiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PapiService]
+      providers: [PapiService],
+      imports: [HttpClientModule]
     });
   });
 

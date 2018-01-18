@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
 export class PapiService {
   request: HttpClient;
 
-  constructor(req: HttpClient) { 
+  constructor(req: HttpClient) {
     this.request = req;
   }
 
